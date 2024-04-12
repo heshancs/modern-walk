@@ -1,0 +1,22 @@
+.category-list {
+  margin-bottom: 80px;
+}
+
+.category-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.category-tile {
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.category-tile > p {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
