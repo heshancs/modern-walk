@@ -4,14 +4,16 @@ import { selectColor, toUpdateCategoryName } from "../utills/helpers";
 import useFetchCategory from "../hooks/useFetchCategory";
 
 const CategoryList: React.FC = () => {
+
+  const BASE_URL = `${import.meta.env.VITE_BASE_URL}` || `https://fakestoreapi.com/products`;
   const {
     data: categories,
     loading,
     error,
-  } = useFetchCategory(`${import.meta.env.VITE_BASE_URL}/categories`);
+  } = useFetchCategory(`${BASE_URL}/categories`);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) throw new Error("API error");
 
 
   return (

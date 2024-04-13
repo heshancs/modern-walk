@@ -5,13 +5,14 @@ import { toUpdateCategoryName } from "../utills/helpers";
 
 const CategoryPage: React.FC = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
-
   const updatedCategoryName = toUpdateCategoryName(categoryName);
+  const BASE_URL = `${import.meta.env.VITE_BASE_URL}` || `https://fakestoreapi.com/products`;
+
   const {
     data: products,
     loading,
     error,
-  } = useFetchData(`${import.meta.env.VITE_BASE_URL}/category/${categoryName}`);
+  } = useFetchData(`${BASE_URL}/category/${categoryName}`);
 
   if (loading) return <div>Loading...</div>;
   if (error) throw new Error("API error");
