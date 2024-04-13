@@ -23,7 +23,7 @@ const Card: React.FC<IProductData> = ({
             className="product-card-content"
             style={{ backgroundColor: selectColor(category) }}
           >
-            <p className="product-card-price text-blue">Rs {price}</p>
+            <p className="product-card-price text-blue">Rs {price.toFixed(2)}</p>
             <p className="product-card-text text-truncate-4">{description}</p>
           </div>
         </div>

@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import "./CategoryList.css";
 import { selectColor, toUpdateCategoryName } from "../utills/helpers";
-import useFetchData from "../hooks/useFetchData";
+import useFetchCategory from "../hooks/useFetchCategory";
 
 const CategoryList: React.FC = () => {
   const {
     data: categories,
     loading,
     error,
-  } = useFetchData(`${import.meta.env.VITE_BASE_URL}/categories`);
+  } = useFetchCategory(`${import.meta.env.VITE_BASE_URL}/categories`);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;

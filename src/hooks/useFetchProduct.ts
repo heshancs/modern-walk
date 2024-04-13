@@ -3,13 +3,13 @@ import axios from "axios";
 import { IProductData } from "../interfaces/IProductData";
 
 const useFetchData = (url: string) => {
-  const [data, setData] = useState<IProductData[]|string>([]);
+  const [data, setData] = useState<IProductData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     axios
-      .get<IProductData[]|string>(url)
+      .get<IProductData[]>(url)
       .then((response) => {
         setData(response.data);
         setLoading(false);

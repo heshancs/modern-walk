@@ -1,6 +1,6 @@
 import CategoryList from "../components/CategoryList.tsx";
 import ProductList from "../components/ProductList.tsx";
-import useFetchData from "../hooks/useFetchData.ts";
+import useFetchData from "../hooks/useFetchProduct.ts";
 
 const HomePage: React.FC = () => {
   const {
