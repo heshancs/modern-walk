@@ -23,6 +23,7 @@ cp .env.sample .env
 ```bash
 npm install
 ```
+
 5. Start the development server:
 ```bash
 npm run dev
